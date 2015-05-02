@@ -78,7 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DisplayTheLatestBlogPosts.feature</DependentUpon>
     </Compile>
+    <Compile Include="Unit\Actions\ReadPostsTests.cs" />
     <Compile Include="Unit\Controllers\PostsControllerTests.cs" />
+    <Compile Include="Unit\Fakes\FakeJustBlogDb.cs" />
+    <Compile Include="Unit\Infrastructure\PostsRepositoryTests.cs" />
+    <Compile Include="Unit\Infrastructure\TestData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
