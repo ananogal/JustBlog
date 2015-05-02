@@ -13,18 +13,35 @@ namespace JustBlog.Tests.Unit.Infrastructure
     [TestFixture]
     public class PostsRepositoryTests
     {
+        private FakeJustBlogDb fakedb;
+        private PostsRepository postsRepository;
+
+        [SetUp]
+        public void BeforeEach()
+        {
+            fakedb = new FakeJustBlogDb();
+            fakedb.AddSet(TestData.Posts);
+
+            postsRepository = new PostsRepository(fakedb);
+        }
+
         [Test]
         public void ShouldLoadLatestPosts()
         {
-            var db = new FakeJustBlogDb();
-            db.AddSet(TestData.Posts);
-
-            var postsRepository = new PostsRepository(db);
-
             var posts = postsRepository.LoadLatest();
 
             posts.Should().NotBeEmpty();
-
         }
+
+        [Test]
+        public void ShouldLoadLatestTenPostsOrderByPublishedDate()
+        {
+            var posts = postsRepository.LoadLatest();
+
+            posts.Should().BeInDescendingOrder(p => p.PublishedDate);
+        }
+
+
+        
     }
 }

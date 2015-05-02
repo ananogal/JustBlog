@@ -7,5 +7,6 @@ namespace JustBlog.Domain
 {
     public class Post
     {
+        public DateTime PublishedDate { get; set; }
     }
 }

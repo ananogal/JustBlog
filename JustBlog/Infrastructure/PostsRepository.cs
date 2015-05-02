@@ -22,7 +22,7 @@ namespace JustBlog.Infrastructure
 
         public virtual IEnumerable<Post> LoadLatest()
         {
-            return db.Query<Post>().Take(10);
+            return db.Query<Post>().OrderByDescending(p => p.PublishedDate).Take(10);
         }
     }
 }
