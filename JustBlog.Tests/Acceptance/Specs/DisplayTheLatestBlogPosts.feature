@@ -7,4 +7,4 @@
 Scenario: Post titles
 	Given the blog has posts
 	When I request a list of posts
-	Then I should get a list of post titles
+	Then I should get a list of post titles order by descending published date

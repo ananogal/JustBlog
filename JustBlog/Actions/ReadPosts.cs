@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JustBlog.Domain;
+using JustBlog.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,21 +9,21 @@ namespace JustBlog.Actions
 {
     public class ReadPosts
     {
-        private Infrastructure.PostsRepository postsRepository;
+        private PostsRepository postsRepository;
 
         public ReadPosts()
         {
 
         }
 
-        public ReadPosts(Infrastructure.PostsRepository postsRepository)
+        public ReadPosts(PostsRepository postsRepository)
         {
             this.postsRepository = postsRepository;
         }
 
-        public virtual void Execute()
+        public virtual IEnumerable<Post> Execute()
         {
-            postsRepository.LoadLatest();
+            return postsRepository.LoadLatest();
         }
     }
 }

@@ -79,7 +79,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.When("I request a list of posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("I should get a list of post titles", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should get a list of post titles order by descending published date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

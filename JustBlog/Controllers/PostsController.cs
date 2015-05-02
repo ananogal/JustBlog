@@ -17,8 +17,7 @@ namespace JustBlog.Controllers
         [Route("api/posts")]
         public IEnumerable<Post> Posts()
         {
-            readPostsAction.Execute();
-            return null;
+            return readPostsAction.Execute();
         }
     }
 }
